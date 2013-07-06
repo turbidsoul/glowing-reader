@@ -4,11 +4,14 @@
 import tornado.ioloop
 import tornado.web
 from handler.reader import ReaderHandler
+from handler.main import MainHandler
 import settings
 
 
 application = tornado.web.Application([
-    (r'/reader', ReaderHandler)
+    (r'/reader', ReaderHandler),
+    (r'/', MainHandler),
+    (r"/static/(.*)", tornado.web.StaticFileHandler, {'path':settings.static_path})
 ], debug=settings.debug)
 
 

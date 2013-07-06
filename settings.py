@@ -7,8 +7,8 @@ base_path = os.path.split(os.path.realpath(__file__))[0]
 
 template_path = os.path.join(base_path, "template")
 db_file = os.path.join(base_path, 'db.sqlite')
+static_path = os.path.join(base_path, 'static')
 
 debug = True
-
 
 jinja2_env = Environment(loader=FileSystemLoader(template_path), auto_reload=debug)
