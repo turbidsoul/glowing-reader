@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block cus_css %}
+    <link rel="stylesheet" href="/static/style/login.css">
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form action="/login" class="form-signin" method='post'>
+            <h2 class="form-signin-heading">请登录</h2>
+            <input type="text" name="" id="" class="input-block-level" placeholder="电子邮件地址">
+            <input type="password" name="" id="" class="input-block-level" placeholder="密码">
+            <label for="remerberme" class="checkbox">
+                <input type="checkbox" name="remerberme" id="remerberme" value="remerberme">记住我
+            </label>
+            <button class="btn btn-large-btn-primary" type="submit">登录</button>
+        </form>
+    </div>
+{% endblock %}
