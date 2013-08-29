@@ -15,21 +15,37 @@
 </head>
 <body>
     {% block content %}
-        <div class="container-fluid">
+        <div class="container">
             <div class="page-header">
-                <h2>{{title|default('Glowing Reader')}} <small>my reader</small></h2>
-                <span class="text-right">登录</span>
+                <h1>{{title|default('Glowing Reader')}} <small>My Reader</small></h1>
             </div>
-            <div class="row-flouid">
-                <div class="span2">
-                    <ul class="nav nav-tabs nav-stacked">
-                        <li class="active"><a href="#">全部</a></li>
-                        <li><a href="#">Title 1</a></li>
-                        <li><a href="#">Title 2</a></li>
-                        <li><a href="#">Title 3</a></li>
+            <div class="navbar nav-fixed-top">
+                <div class="nav-header">
+                    <span class="navbar-brand">{{title|default('Glowing Reader')}}</span>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{wwwroot}}">阅读器</a></li>
+                    <li><a href="{{wwwroot}}">设置</a></li>
+                    <li><a href="{{wwwroot}}">关于我</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <a class="list-group-item">全部<li class="badge">999+</li><a>
+                        <a href="javascript:void(0);" class="active list-group-item">Feed 1<span class="badge">10</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 2<span class="badge">20</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 3<span class="badge">30</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 4<span class="badge">40</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 5<span class="badge">50</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 6<span class="badge">60</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 7<span class="badge">70</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 8<span class="badge">80</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 9<span class="badge">90</span></a>
+                        <a href="javascript:void(0);" class="list-group-item">Feed 10<span class="badge">100</span></a>
                     </ul>
                 </div>
-                <div class="span feed-list-wide">
+                <div class="col-md-9">
                     {% block main %}
                     {% endblock %}
                 </div>
