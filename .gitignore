@@ -1,6 +1,7 @@
 *.mo
 parts
-glowing-reader.sublime-project
+*.sublime-project
+*.sublime-workspace
 .tox
 .coverage
 .project
