@@ -1,35 +1,31 @@
-*.py[cod]
-
-# C extensions
-*.so
-
-# Packages
-*.egg
+*.mo
+parts
+glowing-reader.sublime-project
+.tox
+.coverage
+.project
 *.egg-info
 dist
-build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
 nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
+eggs
 .mr.developer.cfg
-.project
+sdist
+.installed.cfg
+var
+/__pycache__
+lib64
+# C extensions
 .pydevproject
+*.egg
+# Mr Developer
+# Unit test / coverage reports
+*.so
+*.py[cod]
+pip-log.txt
+# Packages
+develop-eggs
+build
+bin
+lib
+# Translations
+# Installer logs
