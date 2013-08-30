@@ -1,6 +1,13 @@
 # -*- coding: utf8 -*-
 
+from db import Model
 
-class Feed(object):
-	"""Feed Model"""
-	pass
+
+class Feed(Model):
+    """Feed Model"""
+    pass
+
+
+class User(Model):
+    """User Model"""
+    pass
