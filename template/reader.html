@@ -1,17 +1,41 @@
 {% extends 'base.html' %}
 {% block main %}
-    <table class="table table-hover">
-    	<caption class="text-left">
-    		<a href="{{feed.link}}" target="_blank">{{feed.title}}</a>
-    	</caption>
-        <tbody>
-            {% for entry in entries %}
-            	<tr>
-            		<td>{{entry.title}}</td>
-            		<td>{{entry.description[:10]}}</td>
-            		<td>{{entry.published}}</td>
-            	</tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="col-md-3">
+        <ul class="list-group">
+            <a class="list-group-item">全部<li class="badge">999+</li><a>
+            <a href="javascript:void(0);" class="active list-group-item">Feed 1<span class="badge">10</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 2<span class="badge">20</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 3<span class="badge">30</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 4<span class="badge">40</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 5<span class="badge">50</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 6<span class="badge">60</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 7<span class="badge">70</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 8<span class="badge">80</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 9<span class="badge">90</span></a>
+            <a href="javascript:void(0);" class="list-group-item">Feed 10<span class="badge">100</span></a>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="table-responsive">
+            <table class="table table-hover table=-bordered">
+            	<caption class="text-left">
+                <h5>
+            		<a href="{{feed.link}}" target="_blank">{{feed.title}} </a><span class="badge">{{entries|length}}</span>
+                </h5>
+            	</caption>
+                <tr>
+                    <th>标题</th>
+                    <th>发布日期</th>
+                </tr>
+                <tbody>
+                    {% for entry in entries %}
+                    	<tr>
+                    		<td>{{entry.title}}</td>
+                    		<td>{{entry.published}}</td>
+                    	</tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

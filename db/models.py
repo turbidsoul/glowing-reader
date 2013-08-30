@@ -11,3 +11,8 @@ class Feed(Model):
 class User(Model):
     """User Model"""
     pass
+
+
+class Tag(Model):
+	"""Tag Model"""
+	pass
