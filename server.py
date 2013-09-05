@@ -14,7 +14,8 @@ application = tornado.web.Application([
     (r'/settings', SettingsHandler),
     (r'/about', AboutHandler),
     (r'/', MainHandler),
-    (r"/static/(.*)", tornado.web.StaticFileHandler, {'path':settings.static_path})
+    (r"/static/(.*)", tornado.web.StaticFileHandler,
+    {'path': settings.static_path})
 ], debug=settings.debug)
 
 
