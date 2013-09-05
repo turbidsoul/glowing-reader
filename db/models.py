@@ -1,18 +1,27 @@
 # -*- coding: utf8 -*-
 
-from db import Model
+from db import Base
+from sqlalchemy import Column, Integer, String, Sequence
 
 
-class Feed(Model):
+class Feed(Base):
     """Feed Model"""
-    pass
+    __tablename__ = "feed"
+
+    id = Column(Integer, Sequence('feed_id_seq'), primary_key=True)
+    title = Column(String(255))
+    link = Column(String(255))
+
+    def __init__(self, title, link):
+        self.title = title
+        self.link = link
 
 
-class User(Model):
+class User(Base):
     """User Model"""
     pass
 
 
-class Tag(Model):
+class Tag(Base):
 	"""Tag Model"""
 	pass

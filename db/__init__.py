@@ -1,12 +1,13 @@
 # -*- coding: utf8 -*-
 
 
-import sqlite3
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 import settings
 
-conn = sqlite3.connect(settings.db_file)
-
-
-class Model(object):
-    """Base Model"""
-    pass
+engine = create_engine("sqlite:///%s" % settings.db_file, echo=True)
+Base = declarative_base(bind=engine)
+Session = sessionmaker()
+Session.configure(bind=engine)
+session = Session()
