@@ -24,7 +24,7 @@ class LoginHandler(BaseHandler):
 class SettingsHandler(BaseHandler):
     """设置"""
     def get(self):
-        return self.render('settings.html')
+        return self.render('settings.html', page='settings')
 
 
 class AboutHandler(BaseHandler):
@@ -32,4 +32,4 @@ class AboutHandler(BaseHandler):
     关于我
     """
     def get(self):     
-        return self.render("about.html")
+        return self.render("about.html", page='about')
