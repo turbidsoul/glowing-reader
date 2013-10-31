@@ -1,27 +1,39 @@
 # -*- coding: utf8 -*-
 
-from db import Base
+from db import Base, query_filter_append
 from datetime import datetime
-from sqlalchemy import Column, String, Sequence, Integer, DateTime
+from sqlalchemy import Column, String, Sequence, Integer, DateTime, Boolean, text
 
 
 class Feed(Base):
     """Feed Model"""
     __tablename__ = 'feed'
     feed_id = Column(Integer, Sequence('feed_id_seq'), primary_key=True)
-    title = Column(String)
-    url = Column(String(255))
-    link = Column(String(255))
-    last_update_time = Column(DateTime)
-    create_time = Column(DateTime)
+    feed_title = Column(String, nullable=False)
+    feed_url = Column(String(255), nullable=False)
+    feed_link = Column(String(255), nullable=False)
+    last_load_time = Column(DateTime)
+    create_time = Column(DateTime, server_default=text('now()'))
+
+    def feed_items(self, session, columns=None, offset=None, limit=None, lock_mode=None, order_by=None, **kwargs):
+        query = session.query(FeedItem)
+        query_filter_append(query, columns, offset, limit, lock_mode, order_by)
+        if kwargs:
+            query.filter_by(**kwargs)
+        return query.all()
 
 
-    def __init__(self, title, url, link):
-        self.title = title
-        self.url = url
-        self.link = link
-        self.create_time = datetime.now()
-
+class FeedItem(Base):
+    """Feed Item Model"""
+    __tablename__ = 'feed_item'
+    item_id = Column(Integer, Sequence('feed_item_id_seq'), primary_key=True)
+    feed_id = Column(Integer)
+    item_title = Column(String, nullable=False)
+    item_descrition = Column(String)
+    item_url = Column(String(255), nullable=False)
+    content = Column(String)
+    star = Column(Boolean, default=False)
+    save = Column(Boolean, default=False)
 
 
 class User(Base):

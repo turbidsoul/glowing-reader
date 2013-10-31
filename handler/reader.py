@@ -10,6 +10,6 @@ class ReaderHandler(BaseHandler):
         return self.render('reader.html', feed=d.feed, entries=d.entries, page='reader')
 
 
-class AddHandler(BaseHandler):
+class AddRssHandler(BaseHandler):
     def post(self, url, tag=None):
         pass

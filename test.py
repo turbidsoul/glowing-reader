@@ -17,8 +17,10 @@ def test_feed_add_and_update():
     feed.save(session)
     assert_equal(feed.feed_id, 1)
     feed.url = 'http://blog.turbidsoul.me'
-    feed.last_update_time = datetime.now()
+    ltime = datetime.now();
+    feed.last_update_time = ltime
     feed.update()
+    Feed.find()
 
 
 # session = Session()
