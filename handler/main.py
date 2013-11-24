@@ -38,10 +38,9 @@ class AboutHandler(BaseHandler):
 
 class ReaderHandler(BaseHandler):
     def get(self, url=None):
-        d = get_feed("http://blog.turbidsoul.me/rss.xml")
-        return self.render('reader.html', feed=d.feed, entries=d.entries, page='reader')
+        return self.render('reader.html', page='reader')
 
 
-class AddRssHandler(BaseHandler):
+class AddFeedHandler(BaseHandler):
     def post(self, url, tag=None):
         pass

@@ -1,10 +1,11 @@
 # -*- coding: utf8 -*-
 
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from settings import db_file
 
-_engine = create_engine("sqlite:///:memory:", echo=True)
+_engine = create_engine(db_file, echo=True)
 
 def init_db():
     Base.metadata.create_all(_engine)

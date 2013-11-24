@@ -3,8 +3,7 @@
 
 import tornado.ioloop
 import tornado.web
-from handler.reader import ReaderHandler
-from handler.main import MainHandler, LoginHandler, SettingsHandler, AboutHandler
+from handler.main import MainHandler, LoginHandler, SettingsHandler, AboutHandler, ReaderHandler
 import settings
 
 
