@@ -3,63 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title|default('Glowing Reader')}}</title>
-    <link rel="stylesheet" href="/static/css/foundation.css">
-    <link rel="stylesheet" href="/static/css/foundation-icons.css">
-    <link rel="stylesheet" href="/static/css/base.css">
-    {% block cus_css %}
-    {% endblock %}
-    <script src='/static/js/jquery.js'></script>
-    <script src="/static/js/foundation.min.js"></script>
-    <script src="/static/js/modernizr.js"></script>
-    {% block cus_js %}
-    {% endblock %}
 </head>
 <body>
-    <div class="contain-to-grid fixed">
-        <nav class="top-bar">
-            <ul class="title-area">
-                <li class="name">
-                    <h1><a href="javascript:void(0)">{{title}}</a></h1>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <!--
-    <div class="row">
-        <div class="large-12 columns">
-          <div class="panel">
-            <h1>{{title}}</h1>
-          </div>
-        </div>
-    </div>
-    -->
-    {% block content %}
-        <div class="row mt60">
-            {% block main %}
-            {% endblock %}
-        </div>
+    {% block main %}
+        
     {% endblock %}
-      <!-- Footer -->
- 
-  <footer class="row">
-    <div class="large-12 columns">
-      <hr />
-      <div class="row">
-        <div class="large-5 columns">
-          <p>© Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="large-7 columns">
-          <ul class="inline-list right">
-            <li><a href="#">Section 1</a></li>
-            <li><a href="#">Section 2</a></li>
-            <li><a href="#">Section 3</a></li>
-            <li><a href="#">Section 4</a></li>
-            <li><a href="#">Section 5</a></li>
-            <li><a href="#">Section 6</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
 </body>
 </html>
