@@ -3,37 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title|default('Glowing Reader')}}</title>
-    <link rel="stylesheet" href="/static/css/bootstrap.css">
-    <link rel="stylesheet" href="/static/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/css/foundation.css">
+    <link rel="stylesheet" href="/static/css/foundation-icons.css">
     <link rel="stylesheet" href="/static/css/base.css">
     {% block cus_css %}
     {% endblock %}
-    <script src='/static/js/jquery.min.js'></script>
-    <script src="/static/js/bootstrap.js"></script>
+    <script src='/static/js/jquery.js'></script>
+    <script src="/static/js/foundation.min.js"></script>
+    <script src="/static/js/modernizr.js"></script>
     {% block cus_js %}
     {% endblock %}
 </head>
 <body>
+    <div class="contain-to-grid fixed">
+        <nav class="top-bar">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="javascript:void(0)">{{title}}</a></h1>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--
+    <div class="row">
+        <div class="large-12 columns">
+          <div class="panel">
+            <h1>{{title}}</h1>
+          </div>
+        </div>
+    </div>
+    -->
     {% block content %}
-        <div class="container">
-            <div class="page-header">
-                <h1>{{title|default('Glowing Reader')}} <small>My Reader</small></h1>
-            </div>
-            <div class="navbar nav-fixed-top">
-                <div class="nav-header">
-                    <a class="navbar-brand" href="{{wwwroot}}/">{{title|default('Glowing Reader')}}</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="{% if page=='reader' %}active{% endif %}"><a href="{{wwwroot}}/reader">阅读器</a></li>
-                    <li class="{% if page=='settings' %}active{% endif %}"><a href="{{wwwroot}}/settings">设置</a></li>
-                    <li class="{% if page=='about' %}active{% endif %}"><a href="{{wwwroot}}/about">关于我</a></li>
-                </ul>
-            </div>
-            <div class="row">
-                {% block main %}
-                {% endblock %}
-            </div>
+        <div class="row mt60">
+            {% block main %}
+            {% endblock %}
         </div>
     {% endblock %}
+      <!-- Footer -->
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-5 columns">
+          <p>© Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="large-7 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Section 1</a></li>
+            <li><a href="#">Section 2</a></li>
+            <li><a href="#">Section 3</a></li>
+            <li><a href="#">Section 4</a></li>
+            <li><a href="#">Section 5</a></li>
+            <li><a href="#">Section 6</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
