@@ -30,3 +30,6 @@ bin
 lib
 # Translations
 # Installer logs
+
+*.db
+*.sqlite
