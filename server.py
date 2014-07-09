@@ -1,10 +1,13 @@
 # -*- coding: utf8 -*-
 
+import os
+import traceback
+
 import settings
 from bottle import jinja2_template as template
-from bottle import default_app, install, route, run, TEMPLATE_PATH, abort
+from bottle import (abort, default_app, install, route, run, static_file,
+                    TEMPLATE_PATH)
 from bottle.ext import sqlite
-import traceback
 
 TEMPLATE_PATH.insert(0, './template/')
 install(sqlite.Plugin(dbfile='./db.sqlite'))
@@ -17,6 +20,10 @@ def renderer(f, **kwargs):
     params.update(kwargs)
     return template(f, params)
 
+
+@route('/static/<path:path>')
+def staticfile(path):
+    return static_file(path, settings.static_path);
 
 
 @route('')
